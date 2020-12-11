@@ -16,8 +16,26 @@ _global_script_class_icons={
 [application]
 
 config/name="boids-algorithm"
-config/icon="res://icon.png"
+run/main_scene="res://assets/scenes/main.tscn"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
+window/size/borderless=true
+window/size/fullscreen=true
+
+[physics]
+
+2d/default_gravity_vector=Vector2( 0, 0 )
 
 [rendering]
 
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+threads/thread_model=2
+quality/filters/anisotropic_filter_level=16
+environment/default_clear_color=Color( 0.027451, 0.027451, 0.027451, 1 )
+quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
