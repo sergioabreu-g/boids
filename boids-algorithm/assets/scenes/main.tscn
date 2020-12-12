@@ -17,18 +17,7 @@ colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 0.523179, 1, 0, 0, 1 )
 [node name="Flock" type="Node2D" parent="."]
 script = ExtResource( 1 )
 boidScene = ExtResource( 2 )
-numberOfBoids = 140
-acceleration = 1000.0
-maxSpeed = 300.0
-visualRange = 130.0
-separationDistance = 80.0
 predator = NodePath("../Predator")
-predatorMinDist = 300.0
-cohesionWeight = 0.3
-separationWeight = 50.0
-alignmentWeight = 1.0
-bordersWeight = 300.0
-predatorWeight = 500.0
 
 [node name="Predator" type="Node2D" parent="."]
 modulate = Color( 1, 0, 0, 1 )

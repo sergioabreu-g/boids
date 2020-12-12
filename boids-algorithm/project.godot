@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Boid",
+"language": "GDScript",
+"path": "res://assets/scripts/Boid.gd"
+} ]
 _global_script_class_icons={
-
+"Boid": ""
 }
 
 [application]
