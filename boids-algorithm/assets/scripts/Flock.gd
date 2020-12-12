@@ -3,8 +3,6 @@ extends Node2D
 # General configuration
 export (PackedScene) var boidScene : PackedScene
 export (int) var numberOfBoids = 140
-export (float) var acceleration = 1000
-export (float) var maxSpeed = 300
 export (float) var visualRange = 130
 export (float) var separationDistance = 80
 export (NodePath) var predator
@@ -82,8 +80,6 @@ func _cohesion():
 		_boids[i].acceleration += direction * cohesionWeight
 
 func _separation():
-	var velocity = Vector2(0, 0)
-	
 	for i in range(_boids.size()):
 		var neighbors = _boids[i].neighbors
 		var distances = _boids[i].neighborsDistances

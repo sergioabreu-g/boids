@@ -10,7 +10,7 @@
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.821192, 1 )
-colors = PoolColorArray( 1, 0, 0, 0, 1, 0, 0, 0.523179, 1, 0, 0, 1 )
+colors = PoolColorArray( 0.729412, 0.117647, 0.117647, 0, 0.729412, 0.117647, 0.117647, 0.521569, 0.729412, 0.117647, 0.117647, 1 )
 
 [node name="Root" type="Node2D"]
 
@@ -20,21 +20,19 @@ boidScene = ExtResource( 2 )
 predator = NodePath("../Predator")
 
 [node name="Predator" type="Node2D" parent="."]
-modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 960, 540 )
 script = ExtResource( 4 )
 acceleration = 1000.0
 maxSpeed = 300.0
 
 [node name="Sprite" type="Sprite" parent="Predator"]
-modulate = Color( 1, 0, 0, 1 )
+modulate = Color( 0.870588, 0.105882, 0.105882, 1 )
 scale = Vector2( 0.15, 0.15 )
 z_index = 2
 texture = ExtResource( 3 )
 
 [node name="Trail" parent="Predator" instance=ExtResource( 7 )]
 width = 6.0
-default_color = Color( 1, 0, 0, 1 )
 gradient = SubResource( 1 )
 joint_mode = 2
 begin_cap_mode = 2
