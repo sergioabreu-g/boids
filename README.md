@@ -3,7 +3,7 @@ In 1986 Craig Reynolds created an artificial life simulation called Boids, which
 was able to closely imitate the behavior of flocks of birds. This is an implementation
 of the Boids Algorithm made in Godot (v3.2.3).
 
-![Boids preview](_doc/preview.jpg)
+![Boids preview](_doc/preview.png)
 
 ## Getting Started
 ### Prerequisites
