@@ -3,26 +3,26 @@ In 1986 Craig Reynolds created an artificial life simulation called Boids, which
 was able to closely imitate the behavior of flocks of birds. This is an implementation
 of the Boids Algorithm made in Godot (v3.2.3).
 
-![Boids preview](_doc/preview.png)
+[![Boids preview](_doc/preview.png)](https://youtube.com/placeholder)
 
 ## Getting Started
 ### Prerequisites
 
-You only need [Godot v3.2.3](https://godotengine.org/download) or a higher version.
+You only need [Godot v3.2.3](https://godotengine.org/download) or a compatible/higher version.
 
 ### Installing
 
-Clone or download this repository and
+Clone or download this repository and open the 'boids' project with Godot.
 
 ## Guide of use
 
 This algorithm is an example of an emergent behavior. This means that the
-behavior itself is not programmed by us, and rather shows up as a product of
-the interaction of smaller parts. So, we only have to code a set of rules
+behavior itself is not directly programmed, and rather shows up as a product of
+the interaction between some simple elements. So, we only have to code a set of rules
 every bird-oid object (*boid*) must follow, and then put them all together.
 
 The main rules are cohesion, separation and alignment. You can find a more
-in-depth explanation in [this video](youtube.com) I made.
+in-depth explanation in [this video](https://youtube.com/placeholder) I made.
 
 You can find 2 main scripts in the Godot project:
 
@@ -33,7 +33,7 @@ since the flock script has access to all the boids.
 
 - **Boid**. This script acts as a container that can be accessed from the flock
 script. It's also responsible for updating the boid's position, rotation and
-velocity using the acceleration set by the flock's script.
+velocity using the acceleration calculated by the flock's script in each frame.
 
 ## Built With
 
@@ -45,7 +45,7 @@ Please read [_doc/CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of c
 
 ## Authors
 
-* **[Sergio Abreu García](https://sergioabreu.me)** - *Structure modifications*
+* **[Sergio Abreu García](https://sergioabreu.me)** - *Main author*
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
