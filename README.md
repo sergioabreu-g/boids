@@ -3,7 +3,7 @@ In 1986 Craig Reynolds created an artificial life simulation called Boids, which
 was able to closely imitate the behavior of flocks of birds. This is an implementation
 of the Boids Algorithm made in Godot (v3.2.3).
 
-[![Boids preview](_doc/preview.png)](https://youtu.be/biu8X1spN4w)
+[![Boids preview](_doc/preview.png)](https://youtu.be/pXQCasmBhY4)
 
 ## Getting Started
 ### Prerequisites
@@ -22,7 +22,7 @@ the interaction between some simple elements. So, we only have to code a set of 
 every bird-oid object (*boid*) must follow, and then put them all together.
 
 The main rules are cohesion, separation and alignment. You can find a more
-in-depth explanation in [this video](https://youtu.be/biu8X1spN4w) I made.
+in-depth explanation in [this video](https://youtu.be/pXQCasmBhY4) I made.
 
 You can find 2 main scripts in the Godot project:
 
