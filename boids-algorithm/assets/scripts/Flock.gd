@@ -1,22 +1,22 @@
 extends Node2D
 
 # General configuration
-export (PackedScene) var boidScene : PackedScene
-export (int) var numberOfBoids = 140
-export (float) var visualRange = 130
-export (float) var separationDistance = 80
-export (NodePath) var predator
-export (float) var predatorMinDist = 300
-export (int) var maxNeighborsColor = 20
+@export var boidScene: PackedScene
+@export var numberOfBoids: int = 140
+@export var visualRange: float = 130
+@export var separationDistance: float = 80
+@export var predator: NodePath
+@export var predatorMinDist: float = 300
+@export var maxNeighborsColor: int = 20
 var _predatorRef
 
 # Rule weights
-export (float) var cohesionWeight = 0.3
-export (float) var separationWeight = 50
-export (float) var alignmentWeight = 1
+@export var cohesionWeight: float = 0.3
+@export var separationWeight: float = 50
+@export var alignmentWeight: float = 1
 
-export (float) var bordersWeight = 300
-export (float) var predatorWeight = 500
+@export var bordersWeight: float = 300
+@export var predatorWeight: float = 500
 
 var _boids = []
 var _envDims
@@ -30,12 +30,12 @@ func _ready():
 	_predatorRef = get_node(predator)
 	
 	for i in range(numberOfBoids):
-		var instance = boidScene.instance()
+		var instance = boidScene.instantiate()
 		add_child(instance)
 		_boids.append(instance)
 		
-		var x = rand_range(0, _envDims.x)
-		var y = rand_range(0, _envDims.y)
+		var x = randf_range(0, _envDims.x)
+		var y = randf_range(0, _envDims.y)
 		instance.set_position(Vector2(x, y))
 
 func _process(delta):
@@ -68,7 +68,7 @@ func _cohesion():
 	for i in range(_boids.size()):
 		var neighbors = _boids[i].neighbors
 		
-		if (neighbors.empty()):
+		if (neighbors.is_empty()):
 			continue;
 		
 		var averagePos = Vector2(0, 0)
@@ -84,7 +84,7 @@ func _separation():
 		var neighbors = _boids[i].neighbors
 		var distances = _boids[i].neighborsDistances
 		
-		if (neighbors.empty()):
+		if (neighbors.is_empty()):
 			continue;
 			
 		for j in range(neighbors.size()):
@@ -100,7 +100,7 @@ func _alignment():
 	for i in range(_boids.size()):
 		var neighbors = _boids[i].neighbors
 		
-		if (neighbors.empty()):
+		if (neighbors.is_empty()):
 			continue;
 		
 		var averageVel = Vector2(0, 0)
@@ -134,7 +134,7 @@ func _escapePredator():
 
 func _calculateColor():
 	for boid in _boids:
-		if (boid.neighbors.empty()):
+		if (boid.neighbors.is_empty()):
 			continue
 		
 		var specialColorPercent = float(boid.neighbors.size()) / maxNeighborsColor
