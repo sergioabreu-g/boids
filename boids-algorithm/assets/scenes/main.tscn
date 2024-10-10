@@ -17,13 +17,13 @@ colors = PackedColorArray(0.729412, 0.117647, 0.117647, 0, 0.729412, 0.117647, 0
 [node name="Flock" type="Node2D" parent="."]
 script = ExtResource("1")
 boidScene = ExtResource("2")
-numberOfBoids = 300
+numberOfBoids = 75
 predator = NodePath("../Predator")
 
 [node name="Predator" type="Node2D" parent="."]
 position = Vector2(960, 540)
 script = ExtResource("4")
-acceleration = 1000.0
+acceleration = 4000.0
 maxSpeed = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Predator"]

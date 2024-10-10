@@ -24,6 +24,7 @@ var _envDims
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	get_viewport().size_changed.connect(_on_window_size_changed)
 	
 	randomize()
 	_envDims = get_viewport_rect().size
@@ -37,6 +38,12 @@ func _ready():
 		var x = randf_range(0, _envDims.x)
 		var y = randf_range(0, _envDims.y)
 		instance.set_position(Vector2(x, y))
+
+# Define the function to handle the signal
+func _on_window_size_changed():
+	var new_size = get_viewport().get_visible_rect().size
+	print("Window size changed to: ", new_size)
+	_envDims = get_viewport_rect().size
 
 func _process(delta):
 	_detectNeighbors()
