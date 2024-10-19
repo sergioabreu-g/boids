@@ -1,14 +1,14 @@
 # Boids
 In 1986 Craig Reynolds created an artificial life simulation called Boids, which
 was able to closely imitate the behavior of flocks of birds. This is an implementation
-of the Boids Algorithm made in Godot (v3.2.3).
+of the Boids Algorithm made in Godot (Godot v4.3.stable.official).
 
 [![Boids preview](_doc/preview.png)](https://youtu.be/pXQCasmBhY4)
 
 ## Getting Started
 ### Prerequisites
 
-You only need [Godot v3.2.3](https://godotengine.org/download) or a compatible/higher version.
+You only need [Godot v4.3.stable.official](https://godotengine.org/download) or a compatible/higher version.
 
 ### Installing
 
@@ -37,7 +37,7 @@ velocity using the acceleration calculated by the flock's script in each frame.
 
 ## Built With
 
-* [Godot v3.2.3](https://godotengine.org/)
+* [Godot v4.3.stable.official](https://godotengine.org/)
 
 ## Contributing
 

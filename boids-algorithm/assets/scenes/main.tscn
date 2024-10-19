@@ -1,47 +1,47 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://bhfjqxfptwfxp"]
 
-[ext_resource path="res://assets/scripts/Flock.gd" type="Script" id=1]
-[ext_resource path="res://assets/scenes/Boid.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/sprites/boid.png" type="Texture" id=3]
-[ext_resource path="res://assets/scripts/Predator.gd" type="Script" id=4]
-[ext_resource path="res://assets/scripts/Cursor.gd" type="Script" id=5]
-[ext_resource path="res://assets/sprites/cursor.png" type="Texture" id=6]
-[ext_resource path="res://assets/scenes/Trail.tscn" type="PackedScene" id=7]
+[ext_resource type="Script" path="res://assets/scripts/Flock.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Boid.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cmo1mv0y5atk1" path="res://assets/sprites/boid.png" id="3"]
+[ext_resource type="Script" path="res://assets/scripts/Predator.gd" id="4"]
+[ext_resource type="Script" path="res://assets/scripts/Cursor.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://ck5os1dgt7y2p" path="res://assets/sprites/cursor.png" id="6"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Trail.tscn" id="7"]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.821192, 1 )
-colors = PoolColorArray( 0.729412, 0.117647, 0.117647, 0, 0.729412, 0.117647, 0.117647, 0.521569, 0.729412, 0.117647, 0.117647, 1 )
+[sub_resource type="Gradient" id="1"]
+offsets = PackedFloat32Array(0, 0.821192, 1)
+colors = PackedColorArray(0.729412, 0.117647, 0.117647, 0, 0.729412, 0.117647, 0.117647, 0.521569, 0.729412, 0.117647, 0.117647, 1)
 
 [node name="Root" type="Node2D"]
 
 [node name="Flock" type="Node2D" parent="."]
-script = ExtResource( 1 )
-boidScene = ExtResource( 2 )
+script = ExtResource("1")
+boidScene = ExtResource("2")
 numberOfBoids = 300
 predator = NodePath("../Predator")
 
 [node name="Predator" type="Node2D" parent="."]
-position = Vector2( 960, 540 )
-script = ExtResource( 4 )
+position = Vector2(960, 540)
+script = ExtResource("4")
 acceleration = 1000.0
 maxSpeed = 300.0
 
-[node name="Sprite" type="Sprite" parent="Predator"]
-modulate = Color( 0.870588, 0.105882, 0.105882, 1 )
-scale = Vector2( 0.15, 0.15 )
+[node name="Sprite2D" type="Sprite2D" parent="Predator"]
+modulate = Color(0.870588, 0.105882, 0.105882, 1)
 z_index = 2
-texture = ExtResource( 3 )
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3")
 
-[node name="Trail" parent="Predator" instance=ExtResource( 7 )]
+[node name="Trail" parent="Predator" instance=ExtResource("7")]
 width = 6.0
-gradient = SubResource( 1 )
+gradient = SubResource("1")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = false
 
-[node name="Cursor" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 1 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 6 )
-script = ExtResource( 5 )
+[node name="Cursor" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("6")
+script = ExtResource("5")
